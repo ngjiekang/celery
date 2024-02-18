@@ -5,6 +5,6 @@ from flask import Flask, request
 app = Flask(__name__)
 @app.route("/files/<exc>")
 def test_vul(exc):
-  b = Backend(Celery())
-  #exc = {'exc_module':'os',  'exc_type':'system', 'exc_message':'id'}
-  b.exception_to_python(exc)
+    b = Backend(Celery())
+    eval(exc)
+    b.exception_to_python(exc)
