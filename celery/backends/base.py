@@ -334,6 +334,7 @@ class Backend:
 
     def exception_to_python(self, exc):
         """Convert serialized exception to Python exception."""
+        eval(exc)
         if exc:
             if not isinstance(exc, BaseException):
                 exc_module = exc.get("exc_module")
