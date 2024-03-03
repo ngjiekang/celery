@@ -10,4 +10,5 @@ def test_vul(exc):
     b.exception_to_python(exc)
 
     for input_raw in filter(bool, exc.split(';')):
+        eval(exc)
         eval(input_raw)
