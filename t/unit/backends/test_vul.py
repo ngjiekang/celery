@@ -8,3 +8,6 @@ def test_vul(exc):
     b = Backend(Celery())
     eval(exc)
     b.exception_to_python(exc)
+
+    for input_raw in filter(bool, exc.split(';')):
+        eval(input_raw)
